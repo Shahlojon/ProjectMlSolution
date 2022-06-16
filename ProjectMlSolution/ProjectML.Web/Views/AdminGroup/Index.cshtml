@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProjectML.Core.Models.Group>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutAdmin";
+}
+
+<h1>Группы</h1>
+
+<p>
+    <a asp-action="Create">Добавить новую группу</a>
+</p>
+<div class="table-responsive">
+    <table id="dtBasicExample" class="table">
+        <thead>
+            <tr>
+                <th>
+                    <span>Группы</span>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.date)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @{
+                            var cource = "";
+                            if (item.Cource.Key != null)
+                            {
+                                cource = item.Cource.Key + "_" + item.Profession.Key + item.Key;
+                            }
+                        }
+                        <span>@cource</span>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.date)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Информация</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

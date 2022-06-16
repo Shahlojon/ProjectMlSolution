@@ -1,0 +1,138 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var algorithm = ViewBag.Algorithm;
+}
+
+<style>
+   * {
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container-result {
+    width: 100%;
+    padding: 143px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    }
+    .btn {
+        /*background: rgb(67, 184, 129);*/
+        /*border: none;*/
+        color: white;
+    }
+    .btn.leave {
+        align-self: center;
+        margin-top: 30px;
+        padding: 10px 15px;
+
+    }
+
+    .editor_block {
+        margin: 30px auto 0;
+        max-width: 700px;
+        min-width: 500px;
+    }
+
+    .result_block {
+        margin-top: 30px;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info {
+        margin-bottom: 10px;
+    }
+
+    .result_info {
+        margin-bottom: 10px;
+        color: blue;
+        font-size: 20px;
+    }
+    .site-wrap {
+        display: flex;
+        flex-direction: column;
+        /*height: 100vh;*/
+    }
+    .result_marks {
+        width: 100%;
+        max-width: 700px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    .left,
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .mark {
+        width: 50px;
+        border: 1px solid;
+        border-radius: 5px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+    }
+</style>
+<div class="container container-result">
+
+    <div class="result_marks">
+        <div class="left">
+            <!--
+              <div class="mark-block">
+                <span>Бали гирифтаи Шумо дар асоси алгоритми "Дарахти хулоса" (Decision tree):</span>
+                <div class="mark">5</div>
+            </div>
+            <div class="mark-block">
+                <span>Бали гирифтаи Шумо дар асоси алгоритми "Ҷангали тасодуфӣ" (Random forest):</span>
+                <div class="mark">6</div>
+            </div>
+            <div class="mark-block">
+                <span>Бали гирифтаи Шумо дар асоси алгоритми "Дарахти хулоса" (Decision tree):</span>
+                <div class="mark">7</div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="mark-block">
+                <span>Бали гирифтаи Шумо дар асоси алгоритми "Дарахти хулоса" (Decision tree):</span>
+                <div class="mark">5</div>
+            </div>
+            <div class="mark-block">
+                <span>Бали гирифтаи Шумо дар асоси алгоритми "Дарахти хулоса" (Decision tree):</span>
+                <div class="mark">5</div>
+            </div>
+            -->
+            
+            <div class="mark-block">
+                <span>Бали гирифтаи Шумо дар асоси алгоритми "@algorithm.Algorithm.NameTj" (@algorithm.Algorithm.Name):</span>
+                <div class="mark">@ViewBag.Algorithm.Percent%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="result_block">
+        <div class="info">Донишҷӯ: @algorithm.Topic.Student.FIO</div>
+        <div class="info">Курс: @ViewBag.Group</div>
+        <div class="info">Фан: @algorithm.Topic.Lesson.Subject.Name</div>
+        <div class="info">Мавзӯъ: @algorithm.Topic.Lesson.Name</div>
+        <div class="result_info">Натиҷа: @algorithm.Percent %</div>
+        <div class="result_info">Шумо @algorithm.Grade балл гирифтед</div>
+        @if (algorithm.Grade != 0)
+        {
+            <div class="result_info">Эссеи навиштаи шумо ба @algorithm.NewTheme мувофиқат кард</div>
+        }
+        <a href="/" class="btn btn-primary btn-lg px-5 leave" style="color: black;">Баромад</a>
+    </div>
+</div>

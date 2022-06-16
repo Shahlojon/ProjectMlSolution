@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>@ViewData["Title"] GradeEssay</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <script src="~/js/modernizr-2.6.2.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="~/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="~/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="~/css/aos.css">
+    <link href="~/css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/plugins/plugins.css">
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        <header class="site-navbar py-2 js-sticky-header site-navbar-target" role="banner">
+
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <div class="site-logo">
+                        <a href="index.html" class="d-block">
+                            <img src="~/image/logo.png" alt="Image" class="img-fluid logo">
+                        </a>
+                    </div>
+                    <div class="col-10">
+                        <nav class="col-3 site-navigation position-relative text-right" style="float:right" role="navigation">
+                            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-md-flex">
+                                <li class="active mr-auto">
+                                    <a href="/" class="nav-link text-left">Асосӣ</a>
+                                </li>
+                                <!-- <a href="news.html" class="nav-link text-left">Хабарҳо</a>-->
+                                @if (User.Identity.Name == null)
+                                {
+                                    <a href="/Account/Login" class="small btn btn-primary px-4 py-2 rounded-0" style="color: black;">
+                                        <span class="icon-users"></span> Ворид шудан
+                                    </a>
+                                }
+                                else
+                                {
+                                    <li class="active mr-auto" style="padding: 5px 20px;">
+                                        <span>@User.Identity.Name</span>
+                                    </li>
+                                    <li style="padding: 5px 20px;">
+                                        <form id="logout" class="form-inline" action="/Account/LogOut" method="POST">
+                                            <a href="javascript:document.getElementById('logout').submit()"><i class="zmdi zmdi-lock-open"></i>Выход</a>
+                                        </form>
+                                    </li>
+                                }
+
+                            </ul>
+                        </nav>
+                        <div class="name col-5 d-none d-xl-block text-center line-h-12"><span class="title-university"> Донишкадаи политехникии донишгоҳи техникии Тоҷикистон</span><br><span class="sm-title-university by-name">ба номи М.С.Осимӣ дар шаҳри Хуҷанд</span> </div>
+
+                    </div>
+
+                    <div class="ml-auto">
+                        <div class="social-wrap">
+                            <a href="#" class="d-inline-block d-md-none site-menu-toggle js-menu-toggle text-black">
+                                <span class="icon-menu h3"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header>
+    </div>
+
+    @RenderBody()
+
+    </hr>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="row mb-4">
+                        <div class="col-lg-12 col-sm-5">
+                            <p class="text-center">
+                                <img src="~/image/logo-footer.png" alt="Image" class="img-fluid" style="width:100px">
+                            </p>
+                        </div>
+                        <div class="col-lg-12 col-sm-7">
+                            <div class="social-wrap text-center">
+                                <a href="#"><span class="icon-facebook"></span></a>
+                                <a href="#"><span class="icon-twitter"></span></a>
+                                <a href="#"><span class="icon-linkedin"></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-sm-5">
+                    <h3 class="footer-heading"><span>ГУЗАРИШ БА СОМОНАҲОИ РАСМӢ</span></h3>
+                    <div class="footer-menu">
+                        <ul class="list-unstyled">
+                            <li><a href="http://president.tj" title="Сомонаи расмии Президенти Ҷумҳурии Тоҷикистон">Президенти Тоҷикистон</a></li>
+                            <li><a href="http://maorif.tj" title="Сомонаи расмии Вазорати маориф ва илмӣ ҶТ">Вазорати маориф ва илми ҶТ</a></li>
+                            <li><a href="http://ntc.tj/tj" title="Сомонаи расмии Маркази миллии тестӣ">Маркази миллии тестӣ</a></li>
+                            <li><a href="http://www.kmt.tj" title="Сомонаи расмии Китобхонаи миллии ҶТ">Китобхонаи миллии ҶТ</a></li>
+                            <li><a href="http://www.sugd.tj" title="Сомонаи расмии МИҲД вилояти Суғд">МИҲД вилояти Суғд</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-lg-5 col-sm-7">
+                    <h3 class="footer-heading"><span>ГУЗАРИШ БА СОМОНАҲОИ РАСМӢ</span></h3>
+                    <div class="footer-menu">
+                        <ul class="list-unstyled">
+                            <li><a href="http://asiri.tj" title="Сомонаи расмии Китобхонаи вилоятӣ ба номи Т. Асирӣ">Китобхонаи вилоятӣ ба номи Т. Асирӣ</a></li>
+                            <li><a href="http://www.fosilavi.tj" title="Системаи омӯзиши фосилавии ДПДТТХ">Системаи омӯзиши фосилавии ДПДТТХ</a></li>
+                            <li><a href="http://www.gts-center.tj">Шуъбаи пайгирии хатмкунандагони муассисаҳои таҳсилоти миёна ва олии касбӣ</a></li>
+                            <li><a href="http://politech.tj" title="Сомонаи расмии Донишкадаи Политехникии Донишгоҳи Техникии Тоҷикистон ба номи М.осимӣ дар шаҳри Хуҷанд">Сомонаи ДПДТТХ</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+
+                    <p class="info">
+                        © 2004 -
+                        <script type="text/javascript">document.write((new Date()).getFullYear())</script> Донишкадаи политехникии Донишгоҳи техникии Тоҷикистон. Ҳамаи ҳуқуқҳо ҳифз карда шудааст.
+                    </p>
+                    <p class="info">Тоҷикистон, вилояти Суғд, шаҳри Хуҷанд, кӯчаи Ленин 226. Бинои асосии донишкада. Телефони боварӣ: +992 (3422) 6-04-54</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loader" class="fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"></circle><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#51be78"></circle></svg></div>
+
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.stellar.min.js"></script>
+    <script src="~/js/jquery.countdown.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.min.js"></script>
+    <script src="~/js/jquery.easing.1.3.js"></script>
+    <script src="~/js/aos.js"></script>
+    <script src="~/js/jquery.fancybox.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+    <script src="~/js/jquery.mb.YTPlayer.min.js"></script>
+    <script src="~/js/main.js"></script>
+
+    <script src="~/assets/js/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="~/assets/js/plugins/summernote/summernote.active.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

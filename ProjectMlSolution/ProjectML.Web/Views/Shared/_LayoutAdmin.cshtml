@@ -1,0 +1,255 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewData["Title"] | CareerCenter</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico">
+
+    <!-- CSS
+    ============================================ -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/css/vendor/bootstrap.min.css">
+
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="~/assets/css/vendor/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="~/assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/vendor/themify-icons.css">
+    <link rel="stylesheet" href="~/assets/css/vendor/cryptocurrency-icons.css">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="~/assets/css/plugins/plugins.css">
+
+    <!-- Helper CSS -->
+    <link rel="stylesheet" href="~/assets/css/helper.css">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
+    <style>
+        .form-group {
+            margin: 20px 0;
+        }
+
+        .action-link {
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .header-logo{
+            background: #2b2f46;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        .logo{
+            color: #fff;
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+
+
+        <!-- Header Section Start -->
+        <div class="header-section">
+            <div class="container-fluid">
+                <div class="row justify-content-between align-items-center">
+
+                    <!-- Header Logo (Header Left) Start -->
+                    <div class="header-logo col-auto">
+                        <a href="index.html">
+                            <h1 class="logo">GradeEssay</h1>
+                            @*<img src="assets/images/logo-white-1024x272_2.png" alt="">*@
+                            @* <img src="assets/images/logo/logo-light.png" class="logo-light" alt="">*@
+                        </a>
+                    </div><!-- Header Logo (Header Left) End -->
+                    <!-- Header Right Start -->
+                    <div class="header-right flex-grow-1 col-auto">
+                        <div class="row justify-content-between align-items-center">
+
+                            <!-- Side Header Toggle & Search Start -->
+                            <div class="col-auto">
+                                <div class="row align-items-center">
+
+                                    <!--Side Header Toggle-->
+                                    <div class="col-auto"><button class="side-header-toggle"><i class="zmdi zmdi-menu"></i></button></div>
+
+                                    <!--Header Search-->
+                                    <div class="col-auto">
+
+                                        <div class="header-search">
+
+                                            <button class="header-search-open d-block d-xl-none"><i class="zmdi zmdi-search"></i></button>
+
+                                            <div class="header-search-form">
+                                                <form action="#">
+                                                    <input type="text" placeholder="Search Here">
+                                                    <button><i class="zmdi zmdi-search"></i></button>
+                                                </form>
+                                                <button class="header-search-close d-block d-xl-none"><i class="zmdi zmdi-close"></i></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div><!-- Side Header Toggle & Search End -->
+                            <!-- Header Notifications Area Start -->
+                            <div class="col-auto">
+
+                                <ul class="header-notification-area">
+
+                                    <li class="adomx-dropdown col-auto">
+                                        <a class="toggle" href="#">
+                                            <span class="user">
+                                                <span class="avatar">
+                                                    <img src="~/images/default_user.png" alt="">
+                                                    <span class="status"></span>
+                                                </span>
+                                                <span class="name">@User.Identity.Name</span>
+                                            </span>
+                                        </a>
+
+                                        <!-- Dropdown -->
+                                        <div class="adomx-dropdown-menu dropdown-menu-user">
+                                            <div class="head">
+                                                <h5 class="name"><a href="#">@User.Identity.Name</a></h5>
+                                                <a class="mail" href="#">@User.Identity.Name</a>
+                                            </div>
+                                            <div class="body">
+                                                <ul>
+
+                                                    <li>
+                                                        <form id="logout" class="form-inline" action="/Account/LogOut" method="POST">
+                                                            <a href="javascript:document.getElementById('logout').submit()"><i class="zmdi zmdi-lock-open"></i>Выход</a>
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </li>
+
+
+                                </ul>
+
+                            </div><!-- Header Notifications Area End -->
+
+                        </div>
+                    </div><!-- Header Right End -->
+
+                </div>
+            </div>
+        </div><!-- Header Section End -->
+        <!-- Side Header Start -->
+        <div class="side-header show">
+            <button class="side-header-close"><i class="zmdi zmdi-close"></i></button>
+            <!-- Side Header Inner Start -->
+            <div class="side-header-inner custom-scroll">
+
+                <nav class="side-header-menu" id="side-header-menu">
+                    <ul>
+                        <li><a href="/AdminCource"><i class="ti-notepad"></i> <span>Курс</span></a></li>
+                        <li><a href="/AdminUsers"><i class="ti-user"></i> <span>Пользователи</span></a></li>
+                        <li><a href="/AdminEssay"><i class="ti-user"></i> <span>Эссе</span></a></li>
+                        <li><a href="/AdminExam"><i class="ti-desktop"></i> <span>Экзамены</span></a></li>
+                        <li><a href="/AdminGroup"><i class="ti-desktop"></i> <span>Группы</span></a></li>
+                        @*<li><a href="/AdminPredmet"><i class="ti-layout-slider"></i> <span>Предметы</span></a></li>*@
+                        <li><a href="/AdminSubject"><i class="ti-layout-slider"></i> <span>Предметы</span></a></li>
+                        <li><a href="/AdminLesson"><i class="ti-layout-slider"></i> <span>Темы</span></a></li>
+                        <li><a href="/AdminProfession"><i class="ti-archive"></i> <span>Профессии</span></a></li>
+                    </ul>
+                </nav>
+
+            </div><!-- Side Header Inner End -->
+        </div><!-- Side Header End -->
+        <!-- Content Body Start -->
+        <div class="content-body">
+            @RenderBody()
+        </div><!-- Content Body End -->
+        <!-- Footer Section Start -->
+        <div class="footer-section">
+            <div class="container-fluid">
+
+                <div class="footer-copyright text-center">
+                    <p class="text-body-light">2021 &copy; <a href="">CareerCenter</a></p>
+                </div>
+
+            </div>
+        </div><!-- Footer Section End -->
+
+    </div>
+
+    <!-- JS
+    ============================================ -->
+    <!-- Global Vendor, plugins & Activation JS -->
+    <script src="~/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="~/assets/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="~/assets/js/vendor/popper.min.js"></script>
+    <script src="~/assets/js/vendor/bootstrap.min.js"></script>
+    <!--Plugins JS-->
+    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="~/assets/js/plugins/tippy4.min.js.js"></script>
+    <!--Main JS-->
+    <script src="~/assets/js/main.js"></script>
+
+    <!-- Plugins & Activation JS For Only This Page -->
+    <!--Moment-->
+    <script src="~/assets/js/plugins/moment/moment.min.js"></script>
+
+    <!--Daterange Picker-->
+    <script src="~/assets/js/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="~/assets/js/plugins/daterangepicker/daterangepicker.active.js"></script>
+
+    <script src="~/assets/js/plugins/datatables/datatables.min.js"></script>
+    <script src="~/assets/js/plugins/datatables/datatables.active.js"></script>
+
+    <script src="~/assets/js/plugins/summernote/summernote-bs4.min.js"></script>
+    <script src="~/assets/js/plugins/summernote/summernote.active.js"></script>
+    <script src="~/assets/js/plugins/dropify/dropify.min.js"></script>
+    <script src="~/assets/js/plugins/dropify/dropify.active.js"></script>
+
+    <script src="~/assets/js/plugins/select2/select2.full.min.js"></script>
+    <script src="~/assets/js/plugins/select2/select2.active.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $('#dtBasicExample').DataTable(
+                {
+                    language: {
+                        'paginate': {
+                            'previous': '<span class="fa fa-backward"></span>',
+                            'next': '<span class="fa fa-forward"></span>'
+                        }
+                    }
+                }
+            );
+
+            $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
+    @*<script type="text/javascript">
+        $(document).ready(function () {
+            $('#submit').click(function (e) {
+                e.preventDefault();
+                var name = $('#search').val();
+                name=encodeURIComponent(name);
+                $('#results').load('@Url.Action("NewsSearch", "AdminNews")?name='+name)
+            });
+        });
+        </script>*@
+</body>
+
+
+</html>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ProjectML.Core.Models.Exam>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutAdmin";
+}
+
+<h1>Экзамены</h1>
+
+<p>
+    <a asp-action="Create">Добавить экзамен</a>
+</p>
+<div class="table-responsive">
+    <table id="dtBasicExample" class="table">
+        <thead>
+            <tr>
+                <th>
+                    <span>Группы</span>
+                </th>
+                <th>
+                    <span>Предмет</span>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeStamp)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @{
+                        var cource = "";
+                        if (item.Group.Key != null)
+                        {
+                            cource = item.Group.Cource.Key + "_" + item.Group.Profession.Key + item.Group.Key;
+                        }
+                    }
+                    <span>@cource</span>
+                </td>
+                <td>
+                    @{
+                        var subject = "";
+                        if (item.Subject.Name != null)
+                        {
+                            subject = item.Subject.Name;
+                        }
+                    }
+                    <span>@subject</span>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Изменить</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Информация</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
